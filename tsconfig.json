@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": false,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "strictNullChecks": true,
+    "outDir": "dist",
+    "jsx": "react",
+    "removeComments": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "noEmit": false,
+    "incremental": false,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@app": [
+        "src/app/index.tsx"
+      ],
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@public/*": [
+        "./public/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@shared/*": [
+        "src/shared/*"
+      ],
+      "@entities/*": [
+        "src/entities/*"
+      ],
+      "@widgets/*": [
+        "src/widgets/*"
+      ],
+      "@features/*": [
+        "src/features/*"
+      ],
+    },
+ 
+  },
+  "include": [   
+    "**/*.ts",
+    "**/*.tsx",
+],
+  "exclude": [
+    "node_modules",
+    "scripts",
+    "webpack.config.js"
+  ],
+}
