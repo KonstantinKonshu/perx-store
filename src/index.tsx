@@ -1,9 +1,20 @@
-import React from "react"
+import React, { Component } from "react"
 import { createRoot } from "react-dom/client"
 import App from "@app"
+import { InitStartAppParams } from "@shared/types"
 
-createRoot(document.getElementById("root")!).render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>
-)
+class AppRoot extends Component {
+    start({ dealers }: InitStartAppParams): void {
+        const domNode = document.getElementById("root")
+
+        if (!domNode) {
+            throw new Error("Отсутсвует корневой узел DOM 'root'")
+        }
+
+        const root = createRoot(domNode)
+
+        root.render(<App dealers={dealers} />)
+    }
+}
+
+window.App = AppRoot
