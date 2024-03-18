@@ -11,6 +11,7 @@
 ## Ссылки
 
 -   [Тестовое задание](https://git.perx.ru/-/snippets/15)
+-   [Демо](https://konstantinkonshu.github.io/perx-store)
 
 ## Архитектура
 
@@ -36,4 +37,8 @@
 
 ### Production:
 
-...скоро
+`yarn build && yarn deploy`
+
+
+
+
