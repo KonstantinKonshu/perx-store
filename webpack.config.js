@@ -10,9 +10,8 @@ module.exports = (_env, argv) => {
   return {
     entry: "./src/index.tsx",
     output: {
-      publicPath: '/',
       path: path.resolve(__dirname, "dist"),
-      filename: "main.[chunkhash:8].js",
+      filename: "main.[chunkhash].js",
       clean: true,
     },
     module: {
@@ -69,6 +68,5 @@ module.exports = (_env, argv) => {
     devServer: {
       hot: true,
       port: process.env.PORT,
-      historyApiFallback: true,
     },
 }};
