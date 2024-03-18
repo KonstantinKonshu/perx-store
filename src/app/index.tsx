@@ -1,11 +1,15 @@
 import React from "react"
+import { BrowserRouter } from "react-router-dom"
 import { InitStartAppParams } from "@shared/types"
-import { StoreProvider } from "./providers"
+import { Routing, StoreProvider } from "./providers"
+import "./index.module.scss"
 
 const App = ({ dealers }: InitStartAppParams) => {
     return (
         <StoreProvider dealers={dealers}>
-            <div>Perx store</div>
+            <BrowserRouter>
+                <Routing />
+            </BrowserRouter>
         </StoreProvider>
     )
 }

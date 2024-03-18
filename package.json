@@ -14,10 +14,13 @@
     "types": "tsc --noEmit && eslint -c .eslintrc.json"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.8.2",
     "@reduxjs/toolkit": "^2.2.1",
+    "antd": "^5.15.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.0",
+    "react-router-dom": "^6.22.3",
     "redux-persist": "^6.0.0"
   },
   "browserslist": {

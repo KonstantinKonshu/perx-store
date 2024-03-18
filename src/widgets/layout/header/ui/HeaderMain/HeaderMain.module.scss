@@ -1,0 +1,30 @@
+.root {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: sticky;
+	width: 100%;
+	top: 0;
+	z-index: 10;
+
+	@media (max-width: $breakpoint-s) {
+		padding-inline: 32px;
+	}
+}
+
+.link {
+	display: flex;
+
+	:global {
+		.ant-typography {
+			margin: 0;
+			color: #ffffff;
+			font-size: 32px;
+	
+		  @media (max-width: $breakpoint-s) {
+			font-size: 24px;
+		  }
+		}
+	}
+}
+

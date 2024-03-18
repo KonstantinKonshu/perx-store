@@ -10,6 +10,7 @@ module.exports = (_env, argv) => {
   return {
     entry: "./src/index.tsx",
     output: {
+      publicPath: '/',
       path: path.resolve(__dirname, "dist"),
       filename: "main.[chunkhash:8].js",
       clean: true,
@@ -29,7 +30,16 @@ module.exports = (_env, argv) => {
         {
           test: /\.(s[ac]|c)ss$/,
           exclude: /node_modules/,
-          use: [ isProduction ? MiniCssExtractPlugin.loader : "style-loader", "css-loader", "sass-loader"]
+          use: [ 
+            isProduction ? MiniCssExtractPlugin.loader : "style-loader", 
+            "css-loader", 
+            { 
+              loader: "sass-loader",  
+              options: {
+                additionalData: '@import "@shared/styles/index.scss";',
+              }
+            }
+          ]
         },
         {
           test: /\.(gif|jpe?g|tiff|png|webp|bmp|svg|eot|ttf|woff|woff2)$/i,
@@ -40,11 +50,12 @@ module.exports = (_env, argv) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: path.join(__dirname, './public/index.html')
-    }),
+     }),
+      new MiniCssExtractPlugin(),
       new Dotenv()
     ],
     resolve: {
-      extensions: [".js", ".jsx", ".ts", ".tsx"],
+      extensions: [".js", ".jsx", ".ts", ".tsx", ".scss"],
       alias: {
         '@public': path.resolve(__dirname, './public'),
         '@app': path.resolve(__dirname, "./src/app"),
@@ -55,9 +66,9 @@ module.exports = (_env, argv) => {
         '@features': path.resolve(__dirname, "./src/features")
       }
     },
-    devtool: "source-map",
     devServer: {
       hot: true,
-      port: process.env.PORT
+      port: process.env.PORT,
+      historyApiFallback: true,
     },
 }};

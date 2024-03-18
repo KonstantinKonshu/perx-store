@@ -55,6 +55,7 @@
   "include": [   
     "**/*.ts",
     "**/*.tsx",
+    "./shared/types/declaration.d.ts"
 ],
   "exclude": [
     "node_modules",
