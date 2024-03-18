@@ -4,13 +4,13 @@ import { basketAdapter } from "./slice"
 
 const basketAdapterSelectors = basketAdapter.getSelectors<RootState>((state) => state.basket)
 
-const selectBusketTotalAmount = createSelector(basketAdapterSelectors.selectAll, (basketProducts) =>
+const selectBasketTotalAmount = createSelector(basketAdapterSelectors.selectAll, (basketProducts) =>
     basketProducts.reduce((accumulator, { price, count }) => {
         return accumulator + price * count
     }, 0)
 )
 
-const selectBusketTotalQuantity = createSelector(basketAdapterSelectors.selectAll, (basketProducts) =>
+const selectBasketTotalQuantity = createSelector(basketAdapterSelectors.selectAll, (basketProducts) =>
     basketProducts.reduce((accumulator, { count }) => {
         return accumulator + count
     }, 0)
@@ -19,6 +19,6 @@ const selectBusketTotalQuantity = createSelector(basketAdapterSelectors.selectAl
 export const selectors = {
     selectBasketProductById: basketAdapterSelectors.selectById,
     selectBasketProducts: basketAdapterSelectors.selectAll,
-    selectBusketTotalAmount,
-    selectBusketTotalQuantity,
+    selectBasketTotalAmount,
+    selectBasketTotalQuantity,
 }

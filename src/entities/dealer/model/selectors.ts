@@ -1,6 +1,11 @@
 import { createSelector } from "@reduxjs/toolkit"
 import { RootState } from "@app/providers"
 
-export const selectDealers = (state: RootState) => state.dealer
+const selectDealers = (state: RootState) => state.dealer
 
-export const selectDealerIds = createSelector(selectDealers, (dealer) => dealer.dealerIds)
+const selectDealerIds = createSelector(selectDealers, (dealer) => dealer.dealerIds)
+
+export const selectors = {
+    selectDealers,
+    selectDealerIds,
+}

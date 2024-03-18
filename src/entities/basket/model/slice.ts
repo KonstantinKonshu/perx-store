@@ -9,20 +9,20 @@ export const basketSlice = createSlice({
     name: "basket",
     initialState,
     reducers: {
-        addProductToBusket: (state, action: PayloadAction<BasketProductItem>) => {
+        addProductToBasket: (state, action: PayloadAction<BasketProductItem>) => {
             basketAdapter.setOne(state, action.payload)
         },
-        updateBusketProductCount: (state, action: PayloadAction<BasketProductItem>) => {
+        updateBasketProduct: (state, action: PayloadAction<BasketProductItem>) => {
             basketAdapter.setOne(state, action.payload)
         },
-        removeBusketProduct: (state, action: PayloadAction<BasketProductItem["id"]>) => {
+        removeBasketProduct: (state, action: PayloadAction<BasketProductItem["id"]>) => {
             basketAdapter.removeOne(state, action.payload)
         },
-        removeAllBusketProducts: basketAdapter.removeAll,
+        removeAllBasketProducts: basketAdapter.removeAll,
     },
 })
 
-export const { addProductToBusket, updateBusketProductCount, removeBusketProduct, removeAllBusketProducts } =
+export const { addProductToBasket, updateBasketProduct, removeBasketProduct, removeAllBasketProducts } =
     basketSlice.actions
 
 export default basketSlice.reducer
