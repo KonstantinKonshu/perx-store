@@ -1,0 +1,11 @@
+.root {
+	min-height: 100vh;
+}
+
+.content {
+	padding: 30px 50px;
+
+	@media (max-width: $breakpoint-s) {
+		padding: 32px;
+	}
+}
